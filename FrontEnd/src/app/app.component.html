@@ -1,0 +1,22 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<link rel="stylesheet" [href]="skinUrl">
+
+<div class="container">
+  <div class="com com1 active float display">{{radio?.com1?.freqAsString}}</div>
+  <div class="com com1 standby float display">{{radio?.com1?.standByFreqAsString}}</div>
+  <button class="com com1 switch float"></button>
+
+  <div class="com com2 active float display">{{radio?.com2?.freqAsString}}</div>
+  <div class="com com2 standby float display">{{radio?.com2?.standByFreqAsString}}</div>
+  <button class="com com2 switch float"></button>
+
+  <div class="trn float display" tooltip content="{{radio?.adf?.name}}">{{radio?.adf?.freqAsString}}</div>
+  <knob class="trn knob a skin" [min]="0" [max]="63" [value]="50" [startDegree]="0" [endDegree]="360" (change)="log($event);"> </knob>
+  <knob class="trn knob b skin" [min]="0" [max]="63" [value]="50" [startDegree]="0" [endDegree]="360" (change)="log($event);"> </knob>
+
+  <div class="adf float display" tooltip content="{{radio?.adf?.name}}">{{radio?.adf?.freqAsString}}</div>
+  <knob class="adf knob a skin" [min]="0" [max]="19" [value]="50" [startDegree]="0" [endDegree]="360" (change)="log($event);"> </knob>
+  <knob class="adf knob b skin" [min]="0" [max]="99" [value]="50" [startDegree]="0" [endDegree]="360" (change)="log($event);"> </knob>
+
+  <img class="background">
+</div>
